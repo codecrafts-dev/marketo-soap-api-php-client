@@ -5,7 +5,7 @@
  * @category   SOAP_API_Client
  * @package    CodeCrafts\MarketoSoap
  * @author     Gael Abadin
- * @version    v0.2.0-beta
+ * @version    v0.4.0-beta
  * @copyright  2014 Gael Abadin
  * @license    MIT Expat http://en.wikipedia.org/wiki/Expat_License
  * @link       http://github.com/elcodedocle/marketo-soap-api-client
@@ -58,6 +58,14 @@ interface MarketoSoapApiClientInterface {
     );
 
     /**
+     * Retrieves list of defined fields.
+     *
+     * @return array
+     *   An array of lead fields defined in marketo.
+     */
+    public function getFields();
+
+    /**
      * Sets and returns Marketo SOAP API Client options
      *
      * @param string $soapEndpoint Marketo SOAP API end point URL
@@ -97,6 +105,16 @@ interface MarketoSoapApiClientInterface {
     public function getLeadBy ($type, $value, $flattenAttributes = true);
 
     /**
+     * Retrieves lead activity information.
+     *
+     * @param string $key
+     *   Lead Key, typically email address.
+     * @param string $type
+     *   Lead key type, auto-detection attempted if not supplied.
+     */
+    public function getLeadActivity($key, $type);
+
+  /**
      * Create or update lead information
      *
      * Examples
