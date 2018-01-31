@@ -8,9 +8,14 @@ env:
     - marketo_api_secret='425794457179585644BB2299AACCBB01CC66229C2B35'
     - marketo_api_uri='https://example.mktoapi.com/soap/mktows/2_9'
 
+matrix:
+  include:
+    - php: 5.2
+      dist: precise
+    - php: 5.3
+      dist: precise
 php:
   - 5.3
-    dist: precise
   - 5.4
   - 5.5
   - 7.0
